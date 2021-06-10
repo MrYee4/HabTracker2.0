@@ -18,19 +18,23 @@ public class CalendarDisplay extends AppCompatActivity {
         setContentView(R.layout.activity_calendar_display);
 
 
-        // Setup Calendar by Fetching Date
+        /* Setup Calendar by Fetching Date
         TextView textView = findViewById(R.id.textView);
-        Button button = findViewById(R.id.button);
         String date = getIntent().getStringExtra("date");
         if(date!=null)
-            testView.setText(date);
+            textView.setText(date);*/
+
+        // Button to go to Main
+        Button button = findViewById(R.id.buttonC);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (MainActivity.class, CalendarDisplay.this);
+                Intent intent = new Intent (CalendarDisplay.this, MainActivity.class);
                 startActivity(intent);
             }
         });
+
+
 
         // Setup Display Calendar
         CalendarView calendarView = findViewById(R.id.calendarView);
