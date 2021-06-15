@@ -7,12 +7,16 @@ public class Task {
     private Boolean done;
     private String subtype;
 
-    private Task (String name, int time, String notes, Boolean done, String subtype) {
+    private Task (String name, int time, String notes, String subtype) {
         this.name = name;
         this.time = time;
         this.notes = notes;
-        this.done = done;
+        this.done = false;
         this.subtype = subtype;
+    }
+
+    public void complete () {
+        this.done = true;
     }
 
     public String getName () {
