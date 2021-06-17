@@ -1,5 +1,7 @@
 package com.example.habtracker20;
 
+import com.google.gson.Gson;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -47,5 +49,10 @@ public class Task {
 
     public String getSubtype () {
         return this.subtype;
+    }
+
+    public String toJson () {
+        Gson gson = new Gson();
+        return "";
     }
 }
