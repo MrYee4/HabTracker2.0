@@ -31,17 +31,23 @@ public class Task {
         this.done = true;
     }
 
+    public void incomplete () {this.done = false;}
+
     public String getName () {
         return this.name;
     }
 
-    public Date getTime () {
-        return this.time;
-    }
+    public void setName (String name) {this.name = name;}
+
+    public Date getTime () { return this.time;}
+
+    public void setDate (Date date) {this.time = date;}
 
     public String getNotes () {
         return this.notes;
     }
+
+    public void setNotes (String notes) {this.notes = notes;}
 
     public Boolean getDone () {
         return this.done;
@@ -53,6 +59,6 @@ public class Task {
 
     public String toJson () {
         Gson gson = new Gson();
-        return "";
+        return gson.toJson(this);
     }
 }
