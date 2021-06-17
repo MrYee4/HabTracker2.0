@@ -1,13 +1,23 @@
 package com.example.habtracker20;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class Task {
     private String name;
-    private int time;
+    private Date time;
     private String notes;
     private Boolean done;
     private String subtype;
 
-    private Task (String name, int time, String notes, String subtype) {
+    public Task () {
+        this.name = "Habit";
+        this.time = Calendar.getInstance().getTime();
+        this.done = false;
+        this.subtype = null;
+    }
+
+    public Task (String name, Date time, String notes, String subtype) {
         this.name = name;
         this.time = time;
         this.notes = notes;
@@ -23,7 +33,7 @@ public class Task {
         return this.name;
     }
 
-    public int getTime () {
+    public Date getTime () {
         return this.time;
     }
 

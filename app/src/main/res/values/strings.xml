@@ -13,4 +13,6 @@
     <string name="calendar_title">Calendar</string>
 
     <string name="return_to_main_activity">Back</string>
+
+    <string name="newTask">New Habit</string>
 </resources>
