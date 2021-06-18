@@ -6,26 +6,28 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Task {
+
+    //Changed Data to String!
     private String name;
-    private Date time;
+    private String time;
     private String notes;
     private Boolean done;
     private String subtype;
 
-    public Task () {
-        this.name = "Habit";
-        this.time = Calendar.getInstance().getTime();
-        this.done = false;
-        this.subtype = null;
-    }
-
-    public Task (String name, Date time, String notes, String subtype) {
-        this.name = name;
-        this.time = time;
-        this.notes = notes;
-        this.done = false;
-        this.subtype = subtype;
-    }
+//    public Task(String title, String today, String subtitle, String rwrew) {
+//        this.name = "Habit";
+//        this.time = Calendar.getInstance().getTime();
+//        this.done = false;
+//        this.subtype = null;
+//    }
+//
+//    public Task (String name, Date time, String notes, String subtype) {
+//        this.name = name;
+//        this.time = time;
+//        this.notes = notes;
+//        this.done = false;
+//        this.subtype = subtype;
+//    }
 
     public void complete () {
         this.done = true;
@@ -39,9 +41,9 @@ public class Task {
 
     public void setName (String name) {this.name = name;}
 
-    public Date getTime () { return this.time;}
+    public String getTime () { return this.time;}
 
-    public void setDate (Date date) {this.time = date;}
+    public void setDate (String date) {this.time = date;}
 
     public String getNotes () {
         return this.notes;

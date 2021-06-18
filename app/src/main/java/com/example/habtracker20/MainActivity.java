@@ -38,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
+        // Go to viewTasks
+        Button tasks = findViewById(R.id.to_Tasks);
+        tasks.setOnClickListener(vew -> {
+            Intent intent1 = new Intent(MainActivity.this, viewTasks.class);
+            startActivity(intent1);
+        });
+
 /*
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

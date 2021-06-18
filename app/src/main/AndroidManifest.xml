@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HabTracker20">
-        <activity android:name=".CreateTask"/>
+        <activity android:name=".viewTasks" />
+        <activity android:name=".CreateTask" />
         <activity android:name=".CalendarDisplay" />
         <activity
             android:name=".MainActivity"
