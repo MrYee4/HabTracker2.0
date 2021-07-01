@@ -28,12 +28,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="@string/addTask"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <Button
         android:id="@+id/to_Tasks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/toTasks"
+        android:textColor="@color/black" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
