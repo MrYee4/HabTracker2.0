@@ -16,6 +16,7 @@
     <string name="return_to_main_activity">Back</string>
 
     <string name="addTask">Add Task</string>
+    <string name="pickDate">Date and Time</string>
 
     <string name="newTask">New Habit</string>
     <string name="nameHint">Habit name</string>
