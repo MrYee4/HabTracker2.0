@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
@@ -44,6 +45,12 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
             getDateTimeCalender();
             new DatePickerDialog(this, this, year, month, day).show();
         });
+
+        // save new task
+        Button save = findViewById(R.id.saveBtn);
+        save.setOnClickListener(vew -> {
+
+        });
     }
 
     @Override
@@ -60,9 +67,15 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         this.savedHour = hourOfDay;
         this.savedMinute = minute;
+
+        String text1 = this.savedDay + "/" + this.savedMonth + "/" + this.savedYear;
+        String text2 = this.savedHour + ":" + this.savedMinute;
+        String finalText = text1 + "\n" + text2;
+        TextView textView = findViewById(R.id.seeDate);
+        textView.setText(finalText);
     }
 
-    private void pickDate() {
+    private void saveDate() {
 
     }
 
