@@ -1,10 +1,13 @@
 package com.example.habtracker20;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,9 +28,10 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
     Context context;
     ArrayList<Task> myTask;
 
-    public DoesAdapter(Context c, ArrayList<Task> sf) {
+
+    public DoesAdapter(Context c, ArrayList<Task> mt) {
         context = c;
-        myTask = sf;
+        myTask = mt;
     }
 
 
@@ -43,6 +47,21 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
         myViewHolder.datedoes.setText((CharSequence) myTask.get(position).getTime());
         myViewHolder.descdoes.setText(myTask.get(position).getNotes());
 
+
+        myViewHolder.delHab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            /* Connect with the database to remove permanently the Habits
+            * Delete Habit source: https://www.youtube.com/watch?v=hyE3L2TVEvs&t=0s*/
+            public void onClick(View v) {
+                //myTask.get(position);
+                myTask.remove(position);
+                notifyDataSetChanged();
+                Log.d("Action", "Habit Removed");
+
+            }
+        });
+
+
     }
 
     @Override
@@ -52,7 +71,10 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
+        Button delHab;
+
         TextView titledoes, descdoes, datedoes;
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -60,6 +82,9 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
             descdoes = (TextView) itemView.findViewById(R.id.desd);
             datedoes = (TextView) itemView.findViewById(R.id.dated);
 
+            delHab = itemView.findViewById(R.id.removehab);
+
         }
     }
+
 }

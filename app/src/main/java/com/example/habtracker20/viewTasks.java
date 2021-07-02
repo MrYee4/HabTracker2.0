@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,7 +51,7 @@ public class viewTasks extends AppCompatActivity {
         // For test
         for (int i = 0; i<10; i++) {
             Task tsk = new Task();
-            tsk.setName("NAME");
+            tsk.setName("NAME "+i);
             tsk.setNotes("NOTES");
             tsk.setDate("Today");
 
@@ -79,6 +80,8 @@ public class viewTasks extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 
 
