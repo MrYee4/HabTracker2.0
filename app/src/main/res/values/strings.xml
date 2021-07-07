@@ -16,4 +16,7 @@
 
     <string name="newTask">New Habit</string>
     <string name="nameHint">Habit name</string>
+
+    <string name="apiClientID">150836755405–1jr378tvd8jrcm4539hfh5lobset2dru.apps.googleusercontent.com</string>
+    <!-- 150836755405-1jr378tvd8jrcm4539hfh5lobset2dru.apps.googleusercontent.com -->
 </resources>
