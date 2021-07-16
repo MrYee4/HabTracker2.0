@@ -78,11 +78,11 @@
                 android:text="Remove" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/comphab"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="EMPTY" />
+                android:text="COMPLETED" />
 
         </LinearLayout>
 

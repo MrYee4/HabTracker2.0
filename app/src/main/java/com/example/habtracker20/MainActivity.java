@@ -11,6 +11,7 @@ import android.os.Bundle;
 //import com.google.android.gms.common.SignInButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.fragment_first);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.addhab);
         fab.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CreateTask.class);
             startActivity(intent);

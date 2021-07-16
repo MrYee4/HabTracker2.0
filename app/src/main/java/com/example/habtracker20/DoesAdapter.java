@@ -61,6 +61,19 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
             }
         });
 
+        myViewHolder.comphab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            /* Connect with the database to remove permanently the Habits
+             * Delete Habit source: https://www.youtube.com/watch?v=hyE3L2TVEvs&t=0s*/
+            public void onClick(View v) {
+                //myTask.get(position);
+                myTask.remove(position);
+                notifyDataSetChanged();
+                Log.d("Action", "Habit Completed");
+
+            }
+        });
+
 
     }
 
@@ -71,7 +84,7 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        Button delHab;
+        Button delHab, comphab;
 
         TextView titledoes, descdoes, datedoes;
 
@@ -83,6 +96,7 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
             datedoes = (TextView) itemView.findViewById(R.id.dated);
 
             delHab = itemView.findViewById(R.id.removehab);
+            comphab = itemView.findViewById(R.id.comphab);
 
         }
     }

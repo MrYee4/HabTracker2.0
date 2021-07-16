@@ -6,14 +6,25 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class CreateTask extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+
+    public String strh;
+
+    public String datahab;
+
+    EditText nmofhabit;
+
+    private ArrayList<Task> coso;
 
     int day = 0;
     int month = 0;
@@ -32,6 +43,8 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_task);
 
+        nmofhabit = (EditText) findViewById(R.id.nameOfHabit);
+
         // Go to main activity
         Button cancel = findViewById(R.id.cancelBtn);
         cancel.setOnClickListener(vew -> {
@@ -49,6 +62,11 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
         // save new task
         Button save = findViewById(R.id.saveBtn);
         save.setOnClickListener(vew -> {
+            strh = nmofhabit.getText().toString();
+
+            datahab = savedMonth +" "+ savedDay;
+
+            Log.d("Action", "Habit Added/Saved");
 
         });
     }
@@ -86,5 +104,13 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
         this.year = cal.get(Calendar.YEAR);
         this.hour = cal.get(Calendar.HOUR);
         this.minute = cal.get(Calendar.MINUTE);
+    }
+
+    public String getStrh(){
+        return strh;
+    }
+
+    public String getDatahab(){
+        return datahab;
     }
 }

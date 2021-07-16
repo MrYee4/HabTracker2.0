@@ -18,6 +18,8 @@ import java.util.ArrayList;
 
 public class viewTasks extends AppCompatActivity {
 
+    public CreateTask createTask;
+
 
     /*
     This class is used to show Tasks
@@ -64,6 +66,18 @@ public class viewTasks extends AppCompatActivity {
 //        tsk.setDate("TOday");
 
 //        list.add(tsk);
+
+        createTask = new CreateTask();
+        String title = createTask.getStrh();
+        String datahab = createTask.getDatahab();
+
+        Task tsk = new Task();
+        tsk.setName(title);
+        tsk.setNotes("NOTES");
+        tsk.setDate(datahab);
+
+        list.add(tsk);
+
 
 
         doesAdapter = new DoesAdapter(viewTasks.this, list);
