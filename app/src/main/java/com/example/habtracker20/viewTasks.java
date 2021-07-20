@@ -13,6 +13,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 
@@ -94,6 +96,21 @@ public class viewTasks extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        FloatingActionButton createHab = findViewById(R.id.createhab);
+        createHab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (viewTasks.this, CreateTask.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
 
 
     }
