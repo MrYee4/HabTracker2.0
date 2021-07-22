@@ -6,14 +6,9 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-
     <string name="calendar_title">Calendar</string>
-
     <string name="return_to_main_activity">Back</string>
-
     <string name="newTask">New Habit</string>
-    <string name="nameHint">Habit name</string>
+    <string name="nameHint">Habit Name</string>
+    <string name="infoHint">Description</string>
 </resources>

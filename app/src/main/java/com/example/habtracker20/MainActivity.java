@@ -27,65 +27,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_first);
+        setContentView(R.layout.landing_page);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /* This was deprecated... researching further...
-        // Google Sign-In Creator
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-        // Request API usage
-        public GoogleSignInOptions.Builder requestScopes (Scope R.string.apiClientID)
-        // Build a GoogleSignInClient with the options specified by gso.
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        // Check for existing Google Sign In account
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        updateUI(account);
-        // Set options of the sign-in button.
-        SignInButton signInButton = findViewById(R.id.sign_in_button);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
-        findViewById(R.id.sign_in_button).setOnClickListener(this);
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.sign_in_button:
-                    signIn();
-                    break;
-                // ... }} */
-
-        // Button to go to Calendar
-        Button button = findViewById(R.id.button_first);
-        button.setOnClickListener(view -> {
+        // Buttons
+        Button toCal = findViewById(R.id.toCalendar);
+        toCal.setOnClickListener(view -> {
             Intent intent = new Intent (MainActivity.this, CalendarActivity.class);
             startActivity(intent);
         });
-
-        FloatingActionButton fab = findViewById(R.id.addhab);
+        FloatingActionButton fab = findViewById(R.id.createhab);
         fab.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CreateTask.class);
             startActivity(intent);
         });
-
-
-        // Go to viewTasks
-        Button tasks = findViewById(R.id.to_Tasks);
-        tasks.setOnClickListener(vew -> {
+        Button toTask = findViewById(R.id.toTasks);
+        toTask.setOnClickListener(vew -> {
             Intent intent1 = new Intent(MainActivity.this, viewTasks.class);
             startActivity(intent1);
         });
-
-        /*
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
     }
 
     @Override

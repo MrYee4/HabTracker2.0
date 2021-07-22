@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/landing_page">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.habtracker20.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/landing_page"
+        android:name="com.example.habtracker20.MainActivity"
+        android:label="landing_page"
+        tools:layout="@layout/landing_page">
     </fragment>
 
 </navigation>

@@ -1,7 +1,5 @@
 package com.example.habtracker20;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -13,14 +11,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class CreateTask extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
-    public String strh;
-    public String datahab;
+public class CreateTask extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,
+        TimePickerDialog.OnTimeSetListener {
+    public String nameString;
+    public String data;
     private ArrayList<Task> coso;
-    EditText nmofhabit;
+    EditText habitName;
 
     int day = 0;
     int month = 0;
@@ -38,13 +39,26 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_task);
-
-        nmofhabit = (EditText) findViewById(R.id.nameOfHabit);
-
-        // Go to main activity
+        habitName = findViewById(R.id.nameOfHabit);
+        // Buttons
+        Button toCal = findViewById(R.id.toCalendar);
+        toCal.setOnClickListener(view -> {
+            Intent intent = new Intent (CreateTask.this, CalendarActivity.class);
+            startActivity(intent);
+        });
+        Button toTask = findViewById(R.id.toTasks);
+        toTask.setOnClickListener(vew -> {
+            Intent intent1 = new Intent(CreateTask.this, viewTasks.class);
+            startActivity(intent1);
+        });
         Button cancel = findViewById(R.id.cancelBtn);
         cancel.setOnClickListener(vew -> {
-            Intent intent1 = new Intent(this, MainActivity.class);
+            Intent intent1 = new Intent(CreateTask.this, MainActivity.class);
+            startActivity(intent1);
+        });
+        Button something = findViewById(R.id.toSomething);
+        something.setOnClickListener(vew -> {
+            Intent intent1 = new Intent(CreateTask.this, MainActivity.class);
             startActivity(intent1);
         });
 
@@ -54,16 +68,12 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
             getDateTimeCalender();
             new DatePickerDialog(this, this, year, month, day).show();
         });
-
         // save new task
         Button save = findViewById(R.id.saveBtn);
         save.setOnClickListener(vew -> {
-            strh = nmofhabit.getText().toString();
-
-            datahab = savedMonth +" "+ savedDay;
-
+            nameString = habitName.getText().toString();
+            data = savedMonth +" "+ savedDay;
             Log.d("Action", "Habit Added/Saved");
-
         });
     }
 
@@ -72,7 +82,6 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
         this.savedDay = dayOfMonth;
         this.savedMonth = month;
         this.savedYear = year;
-
         getDateTimeCalender();
         new TimePickerDialog(this, this, hour, minute, true).show();
     }
@@ -81,7 +90,6 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         this.savedHour = hourOfDay;
         this.savedMinute = minute;
-
         String text1 = this.savedDay + "/" + this.savedMonth + "/" + this.savedYear;
         String text2 = this.savedHour + ":" + this.savedMinute;
         String finalText = text1 + "\n" + text2;
@@ -90,7 +98,7 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
     }
 
     private void saveDate() {
-
+        //TODO JSON
     }
 
     private void getDateTimeCalender() {
@@ -102,11 +110,11 @@ public class CreateTask extends AppCompatActivity implements DatePickerDialog.On
         this.minute = cal.get(Calendar.MINUTE);
     }
 
-    public String getStrh(){
-        return strh;
+    public String getNameString(){
+        return nameString;
     }
 
-    public String getDatahab(){
-        return datahab;
+    public String getData(){
+        return data;
     }
 }

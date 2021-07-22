@@ -15,25 +15,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
-
     /*
     This class is used to use RecyclerView
     Taken from the video: https://www.youtube.com/watch?v=jTL6EDvrjn8
-
     Connected to item_style.xml
     Connected to viewTasks.java
     Connected to Task.java
      */
-
     Context context;
     ArrayList<Task> myTask;
-
 
     public DoesAdapter(Context c, ArrayList<Task> mt) {
         context = c;
         myTask = mt;
     }
-
 
     @NonNull
     @Override
@@ -46,8 +41,6 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
         myViewHolder.titledoes.setText(myTask.get(position).getName());
         myViewHolder.datedoes.setText((CharSequence) myTask.get(position).getTime());
         myViewHolder.descdoes.setText(myTask.get(position).getNotes());
-
-
         myViewHolder.delHab.setOnClickListener(new View.OnClickListener() {
             @Override
             /* Connect with the database to remove permanently the Habits
@@ -57,7 +50,6 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
                 myTask.remove(position);
                 notifyDataSetChanged();
                 Log.d("Action", "Habit Removed");
-
             }
         });
 
@@ -70,11 +62,8 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
                 myTask.remove(position);
                 notifyDataSetChanged();
                 Log.d("Action", "Habit Completed");
-
             }
         });
-
-
     }
 
     @Override
@@ -83,22 +72,15 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-
         Button delHab, comphab;
-
         TextView titledoes, descdoes, datedoes;
-
-
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             titledoes = (TextView) itemView.findViewById(R.id.taskTitle);
             descdoes = (TextView) itemView.findViewById(R.id.taskDetails);
             datedoes = (TextView) itemView.findViewById(R.id.dated);
-
             delHab = itemView.findViewById(R.id.removehab);
             comphab = itemView.findViewById(R.id.comphab);
-
         }
     }
-
 }
