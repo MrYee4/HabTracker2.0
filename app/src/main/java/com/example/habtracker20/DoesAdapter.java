@@ -91,8 +91,8 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder>{
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            titledoes = (TextView) itemView.findViewById(R.id.titled);
-            descdoes = (TextView) itemView.findViewById(R.id.desd);
+            titledoes = (TextView) itemView.findViewById(R.id.taskTitle);
+            descdoes = (TextView) itemView.findViewById(R.id.taskDetails);
             datedoes = (TextView) itemView.findViewById(R.id.dated);
 
             delHab = itemView.findViewById(R.id.removehab);

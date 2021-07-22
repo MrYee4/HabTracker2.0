@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4FC5A3"
-    android:scrollbarSize="20dp"
-    tools:context=".SecondFragment">
+    android:scrollbarSize="20dp">
 
     <Button
         android:id="@+id/button_second"

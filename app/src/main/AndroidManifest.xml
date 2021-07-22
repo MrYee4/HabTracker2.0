@@ -12,7 +12,7 @@
         android:theme="@style/Theme.HabTracker20">
         <activity android:name=".viewTasks" />
         <activity android:name=".CreateTask" />
-        <activity android:name=".CalendarDisplay" />
+        <activity android:name=".CalendarActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

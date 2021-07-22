@@ -17,14 +17,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class CreateTask extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
-
     public String strh;
-
     public String datahab;
-
-    EditText nmofhabit;
-
     private ArrayList<Task> coso;
+    EditText nmofhabit;
 
     int day = 0;
     int month = 0;

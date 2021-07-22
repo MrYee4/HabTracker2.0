@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         // Button to go to Calendar
         Button button = findViewById(R.id.button_first);
         button.setOnClickListener(view -> {
-            Intent intent = new Intent (MainActivity.this, CalendarDisplay.class);
+            Intent intent = new Intent (MainActivity.this, CalendarActivity.class);
             startActivity(intent);
         });
 
