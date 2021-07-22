@@ -36,14 +36,16 @@
                 android:text="Details"
                 android:textSize="14dp" />
             </LinearLayout>
+
         <LinearLayout
-            android:layout_gravity="center"
-            android:layout_weight="2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:background="#FFFFFF"
+            android:layout_weight="2"
+            android:background="#00FFFFFF"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/dated"
                 android:layout_width="match_parent"
